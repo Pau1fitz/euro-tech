@@ -1,12 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createGlobalStyle } from 'styled-components'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const GlobalStyle = createGlobalStyle`
+  html, body, div, span,
+  h4, p, footer, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  footer, header, section {
+    display: block;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+  box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+    height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+`
+
+ReactDOM.render(
+  <React.Fragment>
+    <App />, 
+    <GlobalStyle />
+  </React.Fragment>,
+  document.getElementById('root')
+)
