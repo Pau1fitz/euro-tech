@@ -11,7 +11,7 @@ describe('apiCalls', () => {
       }),
     }))
 
-    expect(fetchPlayers()).resolves.toEqual({ groceries: [] })
+    expect(fetchPlayers()).resolves.toEqual({ players: [] })
   })
 
   it('throws an error if status code is not ok', () => {
